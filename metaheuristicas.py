@@ -1,24 +1,15 @@
-
 import numpy as np
-
 from numpy.random import randint
 from numpy.random import rand
 import time
-
 import itertools
-
-"""# Classe - Heterogeneous Polling"""
 import heterogeneousClassifier as HP
-
-"""# Get Results Function"""
 import gridTest as gt
-
-
-
-"""# Metaheurísticas"""
+import math
+import random
+import time
 
 def generatePossibleStates(currentState):
-  
   possibleStates = []
   interacoes = np.sum(currentState)
   n=len(currentState)
@@ -109,7 +100,7 @@ def hill_climbing(dataBase, max_time):
                 break
                 
                
-              print('\n estado ótimo local: ', optimal_state, optimal_value)
+              print('\n local optimal state: ', optimal_state, optimal_value)
     print("\n Best Mean Accuracy: %0.3f" % (optimal_value))
     return optimal_state, optimal_value
 
@@ -128,9 +119,6 @@ def random_state(states):
     index = random.randint(0,len(states)-1)
     return states[index]
 
-import math
-import random
-
 def change_probability(value,best_value,t):
     p = 1/(math.exp(1)**((best_value-value)/t))
     r = random.uniform(0,1)
@@ -139,7 +127,6 @@ def change_probability(value,best_value,t):
     else:
         return False
 
-import time
 
 def simulated_annealing(dataBase, max_time, inter_max, t, alfa):
     # Define n_samples
@@ -161,10 +148,8 @@ def simulated_annealing(dataBase, max_time, inter_max, t, alfa):
     for sample in range(len(nsamples)):
         valid_states = [1]
         estimatorsVectorSize = nsamples[sample]*3
-
-        # Create inicial State - Criar Randomico
+        # Create inicial State
         current_state = inicial_state(estimatorsVectorSize)
-
         # Evaluate the model for inicial state
         metaheuristica_acuracia = objetiveFunction(dataBase,current_state, nsamples[sample])
         aux_val = metaheuristica_acuracia
