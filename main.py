@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""*Segundo Trabalho de Inteligência Artificial e Sistemas Inteligentes - Metaheurísticas*
+"""*Metaheurísticas*
 
 *André Paulo Ferreira Machado*
 
