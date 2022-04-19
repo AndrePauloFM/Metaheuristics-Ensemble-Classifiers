@@ -8,7 +8,6 @@ combinations of classifiers, applied to some classification problems.
 The metaheuristics used were: Hill Climbing, Simulated Annealing and Genetic Algorithm.
 
 DataBases: digits, wine e breast cancer.
-"""
 
 The results of each classifier are presented in a table containing the average of the accuracies
 obtained in each fold of the external cycle, the standard deviation and the confidence interval at 95% of significance
